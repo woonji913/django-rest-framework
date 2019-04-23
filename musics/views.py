@@ -45,7 +45,7 @@ def comment_create(request, music_pk):
         return Response(serializer.data)
 
 @api_view(['PUT', 'DELETE'])
-def comment_update_and_delete(request, music_pk, comment_pk):
+def comment_update_and_delete(request, music_pk, gitcomment_pk):
     comment = get_object_or_404(Comment, pk=comment_pk)
     if request.method == 'PUT':
         serializer = CommentSerializer(data=request.data, instance=comment)
